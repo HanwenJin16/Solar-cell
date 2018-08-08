@@ -8,7 +8,6 @@ eps_sc = 11.8; % dielectric constant; for Si from Srivastava paper
 Eg_eV = 1.12; % band gap; for Si from Srivastava paper
 X_eV = 4.05; % electron affinity; of Si from Srivastava paper
 PhiM_eV = 4.85; % work function of metal; here for graphene
-meff = 0.93; % effective mass; correspond to A*=112 A/(cm^2 *K) for n-Si
 T = 300; % temperature (in Kelvin)
 As=1200000/(1.6*10^-19);
 eps_0=8.85e-12;
