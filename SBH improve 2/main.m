@@ -5,7 +5,7 @@
 %#*******************
 Nd = 3 * 10^17 /10^-6; % defect density; from Srivastava paper in 1/m^3;
 eps_sc = 11.8; % dielectric constant; for Si from Srivastava paper
-Eg_eV = 1.4; % band gap; for Si from Srivastava paper
+Eg_eV = 1.12; % band gap; for Si from Srivastava paper
 X_eV = 4.05; % electron affinity; of Si from Srivastava paper
 PhiM_eV = 4.85; % work function of metal; here for graphene
 meff = 0.93; % effective mass; correspond to A*=112 A/(cm^2 *K) for n-Si
@@ -14,7 +14,8 @@ As=1200000/(1.6*10^-19);
 eps_0=8.85e-12;
 c2=0.27;%the value of c2 and c3 were taken form Thesis-Anlun
 c3=-0.52;
-Ef_gra=0.1;%Here i have just chosen a random fermi level.
+E_D=4.3;%dirac point of graphene, in range of 4.3-4.7eV
+Ef_gra=PhiM_eV-E_D;%Here i have just chosen a random fermi level.
 %# constants:
 %#************
 me = 9.1* 10^-31;
@@ -34,6 +35,6 @@ kT = kB*T;
 w = 1;
 [Ip, Pin] = Iph(Eg_eV * el, w, h*c); % light induced current
 [SBH] = getSBH2 (c2, c3,PhiM_eV);
-[Vmp,Pm] = getVmp3(Ip,SBH, kT, h, el,T,As,eps_r,Nd,Vbi_eV,Ef_gra);
+[Vmp,Pm,J0] = getVmp3(Ip,SBH, kT, h, el,T,As,eps_r,Nd,Vbi_eV,Ef_gra);
 eta=Pm/Pin*100;
 fprintf('the efficiency of the solar cell is %f percent. \n ',eta)

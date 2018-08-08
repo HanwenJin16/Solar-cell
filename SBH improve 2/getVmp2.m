@@ -11,6 +11,6 @@ function [Vmp] = getVmp2(Ip, SBH, kT, h, el,T,As)
   xmin=xs(b);
   Vmp = kT/el * xmin;
   
-  %printf("Vmp (in V): %f \n", Vmp);
+  fprintf("Vmp (in V): %f \n", Vmp);
   
 end
